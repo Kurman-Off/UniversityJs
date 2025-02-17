@@ -32,13 +32,10 @@ function triangle(value1, type1, value2, type2) {
         [value1, value2] = [value2, value1];
         [type1, type2] = [type2, type1];
     }
-    console.log(value1, value2, type1, type2);
 
     if (type1 === 'leg' && type2 !== 'leg') {
         [value1, value2] = [value2, value1];
         [type1, type2] = [type2, type1];
-
-        console.log(value1, value2, type1, type2);
     }
     let a, b, c, alpha, beta;
     switch (`${type1}-${type2}`) {
@@ -114,18 +111,25 @@ function triangle(value1, type1, value2, type2) {
             return 'failed';
     }
 
+    console.log('success');
     return 'success';
 }
 
-triangle(6, 'leg', 0, 'leg');
-triangle(6, 'leg', 4, 'leg');
-triangle(6, 'hypotenuse', 7, 'leg');
-triangle(9, 'hypotenuse', 7, 'leg');
-triangle(7, 'leg', 9, 'hypotenuse');
-triangle(39, 'angle', 7, 'hypotenuse');
-triangle(30, 'angle', 11, 'hypotenuse');
-triangle(11, 'hypotenuse', 30, 'angle');
-triangle(56, 'opposite angle', 8, 'leg');
-triangle(8, 'leg', 56, 'opposite angle');
-triangle(65, 'adjacent angle', 12, 'leg');
-triangle(12, 'leg', 65, 'adjacent angle');
+let value1 = parseFloat(prompt("Введіть перше значення:"));
+let type1 = prompt("Введіть тип першого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
+let value2 = parseFloat(prompt("Введіть друге значення:"));
+let type2 = prompt("Введіть тип другого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
+
+triangle(value1, type1, value2, type2);
+// triangle(6, 'leg', 0, 'leg');
+// triangle(6, 'leg', 4, 'leg');
+// triangle(6, 'hypotenuse', 7, 'leg');
+// triangle(9, 'hypotenuse', 7, 'leg');
+// triangle(7, 'leg', 9, 'hypotenuse');
+// triangle(39, 'angle', 7, 'hypotenuse');
+// triangle(30, 'angle', 11, 'hypotenuse');
+// triangle(11, 'hypotenuse', 30, 'angle');
+// triangle(56, 'opposite angle', 8, 'leg');
+// triangle(8, 'leg', 56, 'opposite angle');
+// triangle(65, 'adjacent angle', 12, 'leg');
+// triangle(12, 'leg', 65, 'adjacent angle');
