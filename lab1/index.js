@@ -117,15 +117,15 @@ function triangle(value1, type1, value2, type2) {
     return 'success';
 }
 
-// triangle(6, 'leg', 0, 'leg');
-// triangle(6, 'leg', 4, 'leg');
-// triangle(6, 'hypotenuse', 7, 'leg');
-// triangle(9, 'hypotenuse', 7, 'leg');
-// triangle(7, 'leg', 9, 'hypotenuse');
-// triangle(39, 'angle', 7, 'hypotenuse');
-// triangle(30, 'angle', 11, 'hypotenuse');
-// triangle(11, 'hypotenuse', 30, 'angle');
-// triangle(56, 'opposite angle', 8, 'leg');
-// triangle(8, 'leg', 56, 'opposite angle');
-// triangle(65, 'adjacent angle', 12, 'leg');
-// triangle(12, 'leg', 65, 'adjacent angle');
+triangle(6, 'leg', 0, 'leg');
+triangle(6, 'leg', 4, 'leg');
+triangle(6, 'hypotenuse', 7, 'leg');
+triangle(9, 'hypotenuse', 7, 'leg');
+triangle(7, 'leg', 9, 'hypotenuse');
+triangle(39, 'angle', 7, 'hypotenuse');
+triangle(30, 'angle', 11, 'hypotenuse');
+triangle(11, 'hypotenuse', 30, 'angle');
+triangle(56, 'opposite angle', 8, 'leg');
+triangle(8, 'leg', 56, 'opposite angle');
+triangle(65, 'adjacent angle', 12, 'leg');
+triangle(12, 'leg', 65, 'adjacent angle');
