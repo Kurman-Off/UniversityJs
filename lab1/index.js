@@ -37,22 +37,33 @@ function triangle(value1, type1, value2, type2) {
         [value1, value2] = [value2, value1];
         [type1, type2] = [type2, type1];
     }
+
     let a, b, c, alpha, beta;
     switch (`${type1}-${type2}`) {
         case 'leg-leg': {
-            a = value1;
-            b = value2;
-            const sumSqrLegs = Math.pow(a, 2) + Math.pow(b, 2);
-            c = Math.sqrt(sumSqrLegs);
-            alpha = Math.atan(a / b);
-            beta = 90 - toDegrees(alpha);
+          if ((value1 < 0.00001 || value2 < 0.00001) || (value1 > 10000000000 || value2 > 10000000000)) {
+            console.log('Не коректні значення');
+            return 'failed';
+          }
+        
+          a = value1;
+          b = value2;
+          const sumSqrLegs = Math.pow(a, 2) + Math.pow(b, 2);
+          c = Math.sqrt(sumSqrLegs);
+          alpha = Math.atan(a / b);
+          beta = 90 - toDegrees(alpha);
 
-            console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${toDegrees(alpha)}\nbeta = ${beta}`);
-            break;
+          console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${toDegrees(alpha)}\nbeta = ${beta}`);
+          break;
         } case 'hypotenuse-leg': {
             if (value1 <= value2) {
                 console.log('The hypotenuse cannot be smaller than the leg');
                 return 'the hypotenuse cannot be smaller than the leg';
+            }
+
+            if ((value1 < 0.00001 || value2 < 0.00001) || (value1 > 10000000000 || value2 > 10000000000)) {
+              console.log('Не коректні значення');
+              return 'failed';
             }
 
             a = value2;
@@ -70,6 +81,11 @@ function triangle(value1, type1, value2, type2) {
                 return 'The angle cannot be equal to or greater than 90 degrees.'
             }
 
+            if ((value1 < 0.00001 || value2 < 0.00001) || (value1 > 10000000000 || value2 > 10000000000)) {
+              console.log('Не коректні значення');
+              return 'failed';
+            }
+
             c = value2;
             alpha = value1;
             a = c * Math.cos(toRadians(alpha));
@@ -84,6 +100,11 @@ function triangle(value1, type1, value2, type2) {
                 return 'The angle cannot be equal to or greater than 90 degrees.'
             }
 
+            if ((value1 < 0.00001 || value2 < 0.00001) || (value1 > 10000000000 || value2 > 10000000000)) {
+              console.log('Не коректні значення');
+              return 'failed';
+            }
+
             alpha = value1;
             a = value2;
             c = a / Math.cos(toRadians(alpha));
@@ -96,6 +117,11 @@ function triangle(value1, type1, value2, type2) {
             if (value1 >= 90) {
                 console.log('The angle cannot be equal to or greater than 90 degrees.')
                 return 'The angle cannot be equal to or greater than 90 degrees.'
+            }
+
+            if ((value1 < 0.00001 || value2 < 0.00001) || (value1 > 10000000000 || value2 > 10000000000)) {
+              console.log('Не коректні значення');
+              return 'failed';
             }
 
             beta = value1;
