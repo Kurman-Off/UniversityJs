@@ -53,7 +53,7 @@ function triangle(value1, type1, value2, type2) {
           alpha = Math.atan(a / b);
           beta = 90 - toDegrees(alpha);
 
-          console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${toDegrees(alpha)}\nbeta = ${beta}`);
+          console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${toDegrees(Math.round(alpha))}\nbeta = ${Math.round(beta)}`);
           break;
         } case 'hypotenuse-leg': {
             if (value1 <= value2) {
@@ -70,10 +70,10 @@ function triangle(value1, type1, value2, type2) {
             c = value1;
             const diffSqrLegAndHypotenuse = Math.pow(c, 2) - Math.pow(a, 2);
             b = Math.sqrt(diffSqrLegAndHypotenuse);
-            alpha = Math.atan(a / b);
+            alpha = Math.asin(a / c);
             beta = 90 - toDegrees(alpha);
 
-            console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${toDegrees(alpha)}\nbeta = ${beta}`);
+            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${toDegrees(Math.round(alpha))}\nbeta = ${Math.round(beta)}`);
             break;
         } case 'angle-hypotenuse': {
             if (value1 >= 90) {
@@ -88,11 +88,11 @@ function triangle(value1, type1, value2, type2) {
 
             c = value2;
             alpha = value1;
-            a = c * Math.cos(toRadians(alpha));
-            b = c * Math.sin(toRadians(alpha));
+            a = c * Math.sin(toRadians(alpha));
+            b = c * Math.cos(toRadians(alpha));
             beta = 90 - alpha;
 
-            console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${alpha}\nbeta = ${beta}`);
+            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
             break;
         } case 'opposite angle-leg': {
             if (value1 >= 90) {
@@ -107,11 +107,11 @@ function triangle(value1, type1, value2, type2) {
 
             alpha = value1;
             a = value2;
-            c = a / Math.cos(toRadians(alpha));
-            b = a * Math.tan(toRadians(alpha));
+            c = a / Math.sin(toRadians(alpha));
+            b = Math.sqrt(c * c - a * a);
             beta = 90 - alpha;
 
-            console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${alpha}\nbeta = ${beta}`);
+            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
             break;
         } case 'adjacent angle-leg': {
             if (value1 >= 90) {
@@ -124,13 +124,13 @@ function triangle(value1, type1, value2, type2) {
               return 'failed';
             }
 
-            beta = value1;
+            alpha = value1;
             a = value2;
-            c = a / Math.sin(toRadians(beta));
-            b = a / Math.tan(toRadians(beta));
-            alpha = 90 - beta;
+            c = a / Math.cos(toRadians(alpha));
+            b = Math.sqrt(c * c - a * a);
+            beta = 90 - alpha;
 
-            console.log(`a = ${a}\nb = ${b}\nc = ${c}\nalpha = ${alpha}\nbeta = ${beta}`);
+            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
             break;
         } default:
             console.log('Invalid type combination.');
@@ -141,21 +141,21 @@ function triangle(value1, type1, value2, type2) {
     return 'success';
 }
 
-// let value1 = parseFloat(prompt("Введіть перше значення:"));
-// let type1 = prompt("Введіть тип першого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
-// let value2 = parseFloat(prompt("Введіть друге значення:"));
-// let type2 = prompt("Введіть тип другого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
+// // let value1 = parseFloat(prompt("Введіть перше значення:"));
+// // let type1 = prompt("Введіть тип першого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
+// // let value2 = parseFloat(prompt("Введіть друге значення:"));
+// // let type2 = prompt("Введіть тип другого значення (наприклад: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'):");
 
-// triangle(value1, type1, value2, type2);
-// triangle(3, 'leg', 3, 'leg');
-// triangle(0.66, 'leg', 0.6, 'leg');
-// triangle(2, 'hypotenuse', 1, 'leg');
-// triangle(9, 'hypotenuse', 7, 'leg');
-// triangle(7, 'leg', 9, 'hypotenuse');
-// triangle(89, 'angle', 7, 'hypotenuse');
-// triangle(30, 'angle', 11, 'hypotenuse');
-// triangle(11, 'hypotenuse', 30, 'angle');
-// triangle(56, 'opposite angle', 8, 'leg');
-// triangle(8, 'leg', 56, 'opposite angle');
-// triangle(65, 'adjacent angle', 12, 'leg');
-// triangle(12, 'leg', 65, 'adjacent angle');
+// // triangle(value1, type1, value2, type2);
+// triangle(3, 'leg', 4, 'leg');
+// // triangle(0.66, 'leg', 0.6, 'leg');
+// triangle(5, 'hypotenuse', 4, 'leg');
+// // triangle(9, 'hypotenuse', 7, 'leg');
+// // triangle(7, 'leg', 9, 'hypotenuse');
+triangle(36.8, 'angle', 5, 'hypotenuse');
+// // triangle(30, 'angle', 11, 'hypotenuse');
+// // triangle(11, 'hypotenuse', 30, 'angle');
+triangle(36, 'opposite angle', 3, 'leg');
+// // triangle(8, 'leg', 56, 'opposite angle');
+triangle(53, 'adjacent angle', 3, 'leg');
+// // triangle(12, 'leg', 65, 'adjacent angle');
