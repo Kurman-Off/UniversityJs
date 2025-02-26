@@ -50,10 +50,10 @@ function triangle(value1, type1, value2, type2) {
           b = value2;
           const sumSqrLegs = Math.pow(a, 2) + Math.pow(b, 2);
           c = Math.sqrt(sumSqrLegs);
-          alpha = Math.atan(a / b);
-          beta = 90 - toDegrees(alpha);
+          alpha = toDegrees(Math.atan(a / b));
+          beta = 90 - alpha;
 
-          console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${toDegrees(Math.round(alpha))}\nbeta = ${Math.round(beta)}`);
+          console.log(`a = ${a.toFixed(2)}\nb = ${b.toFixed(2)}\nc = ${c.toFixed(2)}\nalpha = ${alpha.toFixed(2)}\nbeta = ${beta.toFixed(2)}`);
           break;
         } case 'hypotenuse-leg': {
             if (value1 <= value2) {
@@ -70,10 +70,10 @@ function triangle(value1, type1, value2, type2) {
             c = value1;
             const diffSqrLegAndHypotenuse = Math.pow(c, 2) - Math.pow(a, 2);
             b = Math.sqrt(diffSqrLegAndHypotenuse);
-            alpha = Math.asin(a / c);
-            beta = 90 - toDegrees(alpha);
+            alpha = toDegrees(Math.asin(a / c));
+            beta = 90 - alpha;
 
-            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${toDegrees(Math.round(alpha))}\nbeta = ${Math.round(beta)}`);
+            console.log(`a = ${a.toFixed(2)}\nb = ${b.toFixed(2)}\nc = ${c.toFixed(2)}\nalpha = ${alpha.toFixed(2)}\nbeta = ${beta.toFixed(2)}`);
             break;
         } case 'angle-hypotenuse': {
             if (value1 >= 90) {
@@ -92,7 +92,7 @@ function triangle(value1, type1, value2, type2) {
             b = c * Math.cos(toRadians(alpha));
             beta = 90 - alpha;
 
-            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
+            console.log(`a = ${a.toFixed(2)}\nb = ${b.toFixed(2)}\nc = ${c.toFixed(2)}\nalpha = ${alpha.toFixed(2)}\nbeta = ${beta.toFixed(2)}`);
             break;
         } case 'opposite angle-leg': {
             if (value1 >= 90) {
@@ -111,7 +111,7 @@ function triangle(value1, type1, value2, type2) {
             b = Math.sqrt(c * c - a * a);
             beta = 90 - alpha;
 
-            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
+            console.log(`a = ${a.toFixed(2)}\nb = ${b.toFixed(2)}\nc = ${c.toFixed(2)}\nalpha = ${alpha.toFixed(2)}\nbeta = ${beta.toFixed(2)}`);
             break;
         } case 'adjacent angle-leg': {
             if (value1 >= 90) {
@@ -130,7 +130,7 @@ function triangle(value1, type1, value2, type2) {
             b = Math.sqrt(c * c - a * a);
             beta = 90 - alpha;
 
-            console.log(`a = ${Math.round(a)}\nb = ${Math.round(b)}\nc = ${Math.round(c)}\nalpha = ${Math.round(alpha)}\nbeta = ${Math.round(beta)}`);
+            console.log(`a = ${a.toFixed(2)}\nb = ${b.toFixed(2)}\nc = ${c.toFixed(2)}\nalpha = ${alpha.toFixed(2)}\nbeta = ${beta.toFixed(2)}`);
             break;
         } default:
             console.log('Invalid type combination.');
