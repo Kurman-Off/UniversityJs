@@ -60,22 +60,22 @@ Truck.prototype.AssignDriver = function (name, nightDriving, experience) {
     experience: experience,
   };
 };
-// 1.2.10 Створення об'єктів Truck та демонстрація методу trip
+// 1.2.10
 let truck1 = new Truck("red", 10000, 80.5, "Volvo", "FH16");
 let truck2 = new Truck("blue", 12000, 75.0, "Scania", "R500");
 // 1.2.12 Створення класу Square
 class Square {
   constructor(a) {
-    // 1.2.13 Конструктор класу Square
+    // 1.2.13
     this.a = a;
   }
-  // 1.2.14 Статичний метод help
+  // 1.2.14
   static help() {
     console.log(
       "Square - це геометрична фігура-чотирикутник, у якої всі сторони рівні та всі кути прямі (90 градусів)."
     );
   }
-  // 1.2.15 Методи класу Square
+  // 1.2.15
   length() {
     const perimeter = this.a * 4;
     console.log("Сума довжин сторін квадрата: " + perimeter);
@@ -94,67 +94,34 @@ class Square {
     this.square();
   }
 }
-// 1.2.12 Створення класу Square
-class Square {
-  constructor(a) {
-    // 1.2.13 Конструктор класу Square
-    this.a = a;
-  }
-
-  // 1.2.14 Статичний метод help
-  static help() {
-    console.log(
-      "Square - це геометрична фігура-чотирикутник, у якої всі сторони рівні та всі кути прямі (90 градусів)."
-    );
-  }
-
-  // 1.2.15 Методи класу Square
-  length() {
-    const perimeter = this.a * 4;
-    console.log("Сума довжин сторін квадрата: " + perimeter);
-  }
-
-  square() {
-    const area = this.a * this.a;
-    console.log("Площа квадрата: " + area);
-  }
-
-  info() {
-    console.log("Характеристика квадрата:");
-    console.log("Довжина кожної сторони: " + this.a);
-    console.log("Величина кожного кута: 90 градусів");
-    this.length();
-    this.square();
-  }
-}
-// 1.2.16 Створення класу Rectangle (успадкування від Square)
+// 1.2.16 
 class Rectangle extends Square {
   constructor(a, b) {
-    // 1.2.17 Перевизначення конструктора
-    super(a); // Виклик конструктора батьківського класу (Square)
+    // 1.2.17
+    super(a);
     this.b = b;
   }
 
-  // 1.2.17 Перевизначення статичного методу help
+  // 1.2.17
   static help() {
     console.log(
       "Rectangle - це геометрична фігура-чотирикутник, у якої протилежні сторони рівні та всі кути прямі (90 градусів)."
     );
   }
 
-  // 1.2.17 Перевизначення методу length
+  // 1.2.17
   length() {
     const perimeter = (this.a + this.b) * 2;
     console.log("Сума довжин сторін прямокутника: " + perimeter);
   }
 
-  // 1.2.17 Перевизначення методу square
+  // 1.2.17
   square() {
     const area = this.a * this.b;
     console.log("Площа прямокутника: " + area);
   }
 
-  // 1.2.17 Перевизначення методу info
+  // 1.2.17
   info() {
     console.log("Характеристика прямокутника:");
     console.log("Довжина: " + this.a);
@@ -164,35 +131,35 @@ class Rectangle extends Square {
     this.square();
   }
 }
-// 1.2.18 Створення класу Rhombus (успадкування від Square)
+// 1.2.18
 class Rhombus extends Square {
   constructor(a, alpha, beta) {
-    // 1.2.19 Перевизначення конструктора
-    super(a); // Виклик конструктора батьківського класу (Square)
+    // 1.2.19
+    super(a);
     this.alpha = alpha;
     this.beta = beta;
   }
 
-  // 1.2.19 Перевизначення статичного методу help
+  // 1.2.19
   static help() {
     console.log(
       "Rhombus - це геометрична фігура-чотирикутник, у якої всі сторони рівні, а протилежні кути рівні."
     );
   }
 
-  // 1.2.19 Перевизначення методу length
+  // 1.2.19
   length() {
     const perimeter = this.a * 4;
     console.log("Сума довжин сторін ромба: " + perimeter);
   }
 
-  // 1.2.19 Перевизначення методу square
+  // 1.2.19
   square() {
     const area = this.a * this.a * Math.sin((this.alpha * Math.PI) / 180);
     console.log("Площа ромба: " + area);
   }
 
-  // 1.2.19 Перевизначення методу info
+  // 1.2.19
   info() {
     console.log("Характеристика ромба:");
     console.log("Довжина кожної сторони: " + this.a);
@@ -202,7 +169,7 @@ class Rhombus extends Square {
     this.square();
   }
 }
-// 1.2.20 Створення класу Parallelogram (успадкування від Rectangle)
+// 1.2.20
 class Parallelogram extends Rectangle {
   constructor(a, b, alpha, beta) {
     super(a, b);
@@ -231,13 +198,13 @@ class Parallelogram extends Rectangle {
     this.square();
   }
 }
-// 1.2.23 Виклик статичного методу help для кожного з класів
+// 1.2.23
 Square.help();
 Rectangle.help();
 Rhombus.help();
 Parallelogram.help();
 
-// 1.2.24 Створення об'єктів та виклик методу info
+// 1.2.24
 const mySquare = new Square(5);
 mySquare.info();
 
@@ -249,12 +216,12 @@ myRhombus.info();
 
 const myParallelogram = new Parallelogram(5, 10, 120, 60);
 myParallelogram.info();
-// 1.2.25 Функція Triangular
+// 1.2.25
 function Triangular(a = 3, b = 4, c = 5) {
   const triangle = { a, b, c };
   return triangle;
 }
-// 1.2.26 Створення та виведення об'єктів Triangular
+// 1.2.26
 const triangle1 = Triangular();
 const triangle2 = Triangular(6, 8, 10);
 const triangle3 = Triangular(9, 12, 15);
@@ -263,13 +230,13 @@ console.log(triangle1);
 console.log(triangle2);
 console.log(triangle3);
 
-// 1.2.27 Функція PiMultiplier
+// 1.2.27
 function PiMultiplier(multiplier) {
   return function () {
     return Math.PI * multiplier;
   };
 }
-// 1.2.28 Створення та виведення функцій PiMultiplier
+// 1.2.28
 const multiplyBy2 = PiMultiplier(2);
 const multiplyBy1_5 = PiMultiplier(2 / 3);
 const divideBy2 = PiMultiplier(1 / 2);
@@ -277,7 +244,7 @@ const divideBy2 = PiMultiplier(1 / 2);
 console.log(multiplyBy2());
 console.log(multiplyBy1_5());
 console.log(divideBy2());
-// 1.2.29 Функція Painter
+// 1.2.29
 function Painter(color) {
   return function (obj) {
     if (obj && obj.type) {
@@ -287,24 +254,24 @@ function Painter(color) {
     }
   };
 }
-// 1.2.30 Створення функцій Painter
+// 1.2.30
 const PaintBlue = Painter("blue");
 const PaintRed = Painter("red");
 const PaintYellow = Painter("yellow");
-// Приклад використання Painter
+
+
 const obj1 = { type: "car" };
 const obj2 = { type: "house" };
-const obj3 = {}; // Об'єкт без властивості type
+const obj3 = {};
 
 PaintBlue(obj1);
 PaintRed(obj2);
 PaintYellow(obj3);
-// 1.2.31 Тестові об'єкти
+// 1.2.31
 const obj4 = { maxSpeed: 280, type: "Sportcar", color: "magenta" };
 const obj5 = { type: "Truck", maxSpeed: 180, loadCapacity: 2400 };
 const obj6 = { avgSpeed: 90, color: "purple", isCar: true };
 
-// Демонстрація роботи функцій
 PaintBlue(obj4);
 PaintBlue(obj5);
 PaintBlue(obj6);
