@@ -63,110 +63,111 @@ Truck.prototype.AssignDriver = function (name, nightDriving, experience) {
 // 1.2.10
 let truck1 = new Truck("red", 10000, 80.5, "Volvo", "FH16");
 let truck2 = new Truck("blue", 12000, 75.0, "Scania", "R500");
-// 1.2.12 Створення класу Square
+// 1.2.12
 class Square {
   constructor(a) {
-    // 1.2.13
-    this.a = a;
+      this.a = a;
   }
-  // 1.2.14
+
   static help() {
-    console.log(
-      "Square - це геометрична фігура-чотирикутник, у якої всі сторони рівні та всі кути прямі (90 градусів)."
-    );
+      console.log("Square: four equal sides and four right angles.");
   }
-  // 1.2.15
+
+  get side() {
+      return this.a;
+  }
+
+  set side(value) {
+      this.a = value;
+  }
+
   length() {
-    const perimeter = this.a * 4;
-    console.log("Сума довжин сторін квадрата: " + perimeter);
+      console.log(`Perimeter: ${this.a * 4}`);
   }
 
   square() {
-    const area = this.a * this.a;
-    console.log("Площа квадрата: " + area);
+      console.log(`Area: ${this.a ** 2}`);
   }
 
   info() {
-    console.log("Характеристика квадрата:");
-    console.log("Довжина кожної сторони: " + this.a);
-    console.log("Величина кожного кута: 90 градусів");
-    this.length();
-    this.square();
+      console.log(`Sides: ${this.a}, ${this.a}, ${this.a}, ${this.a}`);
+      console.log("Angles: 90, 90, 90, 90");
+      this.length();
+      this.square();
   }
 }
-// 1.2.16 
+// 1.2.13
 class Rectangle extends Square {
   constructor(a, b) {
-    // 1.2.17
-    super(a);
-    this.b = b;
+      super(a);
+      this.b = b;
   }
 
-  // 1.2.17
   static help() {
-    console.log(
-      "Rectangle - це геометрична фігура-чотирикутник, у якої протилежні сторони рівні та всі кути прямі (90 градусів)."
-    );
+      console.log("Rectangle: opposite sides are equal, four right angles.");
   }
 
-  // 1.2.17
+  get width() {
+      return this.b;
+  }
+
+  set width(value) {
+      this.b = value;
+  }
+
   length() {
-    const perimeter = (this.a + this.b) * 2;
-    console.log("Сума довжин сторін прямокутника: " + perimeter);
+      console.log(`Perimeter: ${2 * (this.a + this.b)}`);
   }
 
-  // 1.2.17
   square() {
-    const area = this.a * this.b;
-    console.log("Площа прямокутника: " + area);
+      console.log(`Area: ${this.a * this.b}`);
   }
 
-  // 1.2.17
   info() {
-    console.log("Характеристика прямокутника:");
-    console.log("Довжина: " + this.a);
-    console.log("Ширина: " + this.b);
-    console.log("Величина кожного кута: 90 градусів");
-    this.length();
-    this.square();
+      console.log(`Sides: ${this.a}, ${this.b}, ${this.a}, ${this.b}`);
+      console.log("Angles: 90, 90, 90, 90");
+      this.length();
+      this.square();
   }
 }
-// 1.2.18
+// 1.2.14
 class Rhombus extends Square {
   constructor(a, alpha, beta) {
-    // 1.2.19
-    super(a);
-    this.alpha = alpha;
-    this.beta = beta;
+      super(a);
+      this.alpha = alpha;
+      this.beta = beta;
   }
 
-  // 1.2.19
   static help() {
-    console.log(
-      "Rhombus - це геометрична фігура-чотирикутник, у якої всі сторони рівні, а протилежні кути рівні."
-    );
+      console.log("Rhombus: four equal sides, opposite angles are equal.");
   }
 
-  // 1.2.19
-  length() {
-    const perimeter = this.a * 4;
-    console.log("Сума довжин сторін ромба: " + perimeter);
+  get alphaAngle() {
+      return this.alpha;
   }
 
-  // 1.2.19
+  set alphaAngle(value) {
+      this.alpha = value;
+  }
+
+  get betaAngle() {
+      return this.beta;
+  }
+
+  set betaAngle(value) {
+      this.beta = value;
+  }
+
   square() {
-    const area = this.a * this.a * Math.sin((this.alpha * Math.PI) / 180);
-    console.log("Площа ромба: " + area);
+      let radAlpha = (this.alpha * Math.PI) / 180;
+      console.log(`Area: ${this.a ** 2 * Math.sin(radAlpha)}`);
   }
 
-  // 1.2.19
   info() {
-    console.log("Характеристика ромба:");
-    console.log("Довжина кожної сторони: " + this.a);
-    console.log("Тупий кут: " + this.alpha + " градусів");
-    console.log("Гострий кут: " + this.beta + " градусів");
-    this.length();
-    this.square();
+      console.log(`Sides: ${this.a}, ${this.a}, ${this.a}, ${this.a}`);
+      console.log(`Angles: ${this.alpha}, ${this.beta}, ${this.alpha}, ${this.beta}`);
+      this.length();
+      this.square();
   }
 }
 // 1.2.20
