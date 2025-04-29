@@ -1,0 +1,72 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+}
+
+h1 {
+  text-align: center;
+}
+
+select {
+  margin-right: 20px;
+}
+
+.playing__field {
+  height: 800px;
+  margin-top: 15px;
+  position: relative;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.click__ellement {
+  width: 35px;
+  height: 35px;
+}
+
+.click__ellement__lazy{
+  position: absolute;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  transition: left 0.5s ease, top 0.5s ease;
+
+}
+
+.click__ellement__normal{
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  transition: left 0.3s ease, top 0.3s ease;
+
+}
+
+.click__ellement__hard{
+  position: absolute;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  transition: left 0.1s ease, top 0.1s ease;
+
+}
+
+.game__status {
+  display: none;
+  padding: 20px 0 0 30px;
+}
+
+.game__status__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn__restart {
+  width: 110px;
+  height: 25px;
+  text-align: center;
+}

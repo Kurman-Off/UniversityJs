@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Pixel Hunt</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="game__options">
+      <h1>Pixel Hunt</h1>
+
+      <label for="difficulty">Choose difficulty:</label>
+
+      <select name="cars" id="difficulty" class="select__difficulty">
+        <option value="Default" selected hidden>Please choose an option</option>
+        <option value="Lazy">Lazy</option>
+        <option value="Normal">Normal</option>
+        <option value="Catch me if you can">Catch me if you can</option>
+      </select>
+
+      <label for="color">Choose color:</label>
+
+      <select name="cars" id="color" class="select__color">
+        <option value="Default" selected hidden>Please choose an option</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+      </select>
+
+      <button class="btn__start">start</button>
+    </div>
+
+    <div class="game__status">
+      <div class="game__status__content">
+        <span class="score__element"></span> 
+        <span class="time"></span>
+        <button class="btn__restart">restart game</button>
+      </div>
+    </div>
+
+    <div class="playing__field">
+      <div class="click__ellement"></div>
+    </div>
+  </div>
+  
+  <script src="./index.js"></script>
+</body>
+</html>
