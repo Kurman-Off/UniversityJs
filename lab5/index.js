@@ -142,7 +142,6 @@ function moveRandomPosition() {
       endGame();
     }
   }, clickTimeout);
-
 }
 
 function incrementScore() {

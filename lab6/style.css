@@ -1,0 +1,53 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.game__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button__new__game {
+    width: auto;
+    height: 25px;
+}
+
+.hud {
+    /*width: 300px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+table {
+    border-collapse: collapse;
+
+}
+
+td {
+    border: 1px solid #fff;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    color: green;
+}
+
+.light__on {
+    background-color: #ffd500;
+}
+
+.light__off {
+    background-color: black;
+}
