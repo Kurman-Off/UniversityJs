@@ -8,7 +8,6 @@ const gameState = {
     countOfClick: 0,
     matrix: [],
     buttonText: 'New Game',
-    second: 0,
     timerInterval: 0,
 };
 
