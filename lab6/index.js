@@ -8,13 +8,13 @@ const gameState = {
     countOfClick: 0,
     matrix: [],
     buttonText: 'New Game',
-    second: 0,
     timerInterval: 0,
 };
 
 const elements = {
     gameContainer: document.createElement('div'),
     buttonNewGame: document.createElement('button'),
+    restartButton: document.createElement('button'),
     table: document.getElementById('matrix'),
     hud: document.createElement('div'),
     targetDisplay: document.createElement('span'),
@@ -30,11 +30,14 @@ elements.scoreDisplay.textContent = `Score: ${gameState.currentScore}`;
 
 document.body.appendChild(elements.timerDisplay)
 elements.timerDisplay.id = 'timer';
-elements.timerDisplay.textContent = `Timer: `;
 
 document.body.appendChild(elements.buttonNewGame)
 elements.buttonNewGame.className = 'button__new__game';
 elements.buttonNewGame.textContent = `${gameState.buttonText}`;
+
+elements.restartButton.className = 'button__restart';
+elements.restartButton.textContent = 'Restart';
+document.body.appendChild(elements.restartButton);
 
 document.body.appendChild(elements.gameContainer);
 elements.gameContainer.appendChild(elements.table);
@@ -52,6 +55,10 @@ function initializeGame() {
         .then(data => {
             const matrixKeys = Object.keys(data).filter(key => key.startsWith('matrix'));
 
+            if (gameState.matrix.length > 0) {
+                gameState.previousMatrix = JSON.parse(JSON.stringify(gameState.matrix));
+            }
+
             let randomIndex;
             let randomKey;
             let newMatrix;
@@ -63,8 +70,11 @@ function initializeGame() {
 
             } while (JSON.stringify(newMatrix) === JSON.stringify(gameState.previousMatrix))
 
+
             gameState.matrix = newMatrix;
-            gameState.previousMatrix = gameState.matrix;
+            console.log(gameState.matrix);
+            console.log(gameState.previousMatrix);
+            console.log(newMatrix);
 
             localStorage.setItem('previousMatrix', JSON.stringify(gameState.previousMatrix));
 
@@ -206,4 +216,19 @@ function newGame() {
     initializeGame();
 }
 
+function restartGame() {
+    elements.restartButton.addEventListener('click', () => {
+        const savedMatrix = gameState.matrix;
+
+        if (savedMatrix) {
+            gameState.currentScore = 0;
+            elements.scoreDisplay.textContent = `Score: ${gameState.currentScore}`;
+            startTimer();
+            lightsOut();
+        }
+    });
+
+}
+
+restartGame();
 newGame();
