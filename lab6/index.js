@@ -55,10 +55,6 @@ function initializeGame() {
         .then(data => {
             const matrixKeys = Object.keys(data).filter(key => key.startsWith('matrix'));
 
-            if (gameState.matrix.length > 0) {
-                gameState.previousMatrix = JSON.parse(JSON.stringify(gameState.matrix));
-            }
-
             let randomIndex;
             let randomKey;
             let newMatrix;
@@ -70,11 +66,11 @@ function initializeGame() {
 
             } while (JSON.stringify(newMatrix) === JSON.stringify(gameState.previousMatrix))
 
-
             gameState.matrix = newMatrix;
-            console.log(gameState.matrix);
-            console.log(gameState.previousMatrix);
-            console.log(newMatrix);
+
+            if (gameState.matrix.length > 0) {
+                gameState.previousMatrix = JSON.parse(JSON.stringify(gameState.matrix));
+            }
 
             localStorage.setItem('previousMatrix', JSON.stringify(gameState.previousMatrix));
 
@@ -218,9 +214,10 @@ function newGame() {
 
 function restartGame() {
     elements.restartButton.addEventListener('click', () => {
-        const savedMatrix = gameState.matrix;
+        const savedMatrix = JSON.parse(localStorage.getItem('previousMatrix'));
 
         if (savedMatrix) {
+            gameState.matrix = savedMatrix;
             gameState.currentScore = 0;
             elements.scoreDisplay.textContent = `Score: ${gameState.currentScore}`;
             startTimer();
