@@ -1,0 +1,45 @@
+{
+  "categoryName": "Фрукти",
+  "items": [
+    {
+      "id": 1,
+      "name": "Яблуко «Гала»",
+      "shortname": "gala_apple",
+      "description": "Соковите солодке яблуко.",
+      "price": 15,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 2,
+      "name": "Банан",
+      "shortname": "banana",
+      "description": "Стиглі банани середнього розміру.",
+      "price": 18,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 3,
+      "name": "Апельсин",
+      "shortname": "orange",
+      "description": "Соковитий цитрус з Іспанії.",
+      "price": 22,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 4,
+      "name": "Ківі",
+      "shortname": "kiwi",
+      "description": "Невеликі, але дуже солодкі.",
+      "price": 12,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 5,
+      "name": "Полуниця (250 г)",
+      "shortname": "strawberry",
+      "description": "Свіжа теплична полуниця.",
+      "price": 35,
+      "image": "image/200x200.gif"
+    }
+  ]
+}

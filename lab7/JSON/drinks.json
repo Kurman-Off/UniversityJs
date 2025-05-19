@@ -1,0 +1,45 @@
+{
+  "categoryName": "Напої",
+  "items": [
+    {
+      "id": 1,
+      "name": "Вода негазована 0.5 л",
+      "shortname": "still_water",
+      "description": "Мінералізована питна вода.",
+      "price": 12,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 2,
+      "name": "Кола 0.33 л",
+      "shortname": "cola",
+      "description": "Класичний смак.",
+      "price": 18,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 3,
+      "name": "Сік апельсиновий 1 л",
+      "shortname": "orange_juice",
+      "description": "100 % апельсиновий сік.",
+      "price": 42,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 4,
+      "name": "Кава холодна 0.25 л",
+      "shortname": "cold_coffee",
+      "description": "Латте з льодом, без цукру.",
+      "price": 28,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 5,
+      "name": "Чай зелений 0.5 л",
+      "shortname": "green_tea",
+      "description": "Охолоджений листовий чай.",
+      "price": 20,
+      "image": "image/200x200.gif"
+    }
+  ]
+}

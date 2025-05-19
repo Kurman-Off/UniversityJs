@@ -1,0 +1,45 @@
+{
+  "categoryName": "Овочі",
+  "items": [
+    {
+      "id": 1,
+      "name": "Морква",
+      "shortname": "carrot",
+      "description": "Солодка молода морква, кг.",
+      "price": 14,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 2,
+      "name": "Картопля",
+      "shortname": "potato",
+      "description": "Сорт «Луганська рожева», кг.",
+      "price": 10,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 3,
+      "name": "Огірки (500 г)",
+      "shortname": "cucumber",
+      "description": "Хрумкі тепличні огірки.",
+      "price": 16,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 4,
+      "name": "Помідори «Сливка»",
+      "shortname": "tomato_plum",
+      "description": "Солодкі помідори для салатів.",
+      "price": 28,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 5,
+      "name": "Броколі",
+      "shortname": "broccoli",
+      "description": "Свіжозібрана броколі, качан.",
+      "price": 24,
+      "image": "image/200x200.gif"
+    }
+  ]
+}

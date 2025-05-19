@@ -1,0 +1,45 @@
+{
+  "categoryName": "Снеки",
+  "items": [
+    {
+      "id": 1,
+      "name": "Шоколад молочний 90 г",
+      "shortname": "milk_chocolate",
+      "description": "Класичний молочний шоколад.",
+      "price": 29,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 2,
+      "name": "Печиво вівсяне 200 г",
+      "shortname": "oat_cookies",
+      "description": "М’яке печиво з родзинками.",
+      "price": 26,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 3,
+      "name": "Батончик мюслі",
+      "shortname": "muesli_bar",
+      "description": "З горіхами та медом.",
+      "price": 15,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 4,
+      "name": "Маршмелоу 100 г",
+      "shortname": "marshmallow",
+      "description": "Пухкі цукерки ванільні.",
+      "price": 22,
+      "image": "image/200x200.gif"
+    },
+    {
+      "id": 5,
+      "name": "Чіпси картопляні 150 г",
+      "shortname": "potato_chips",
+      "description": "Сіль + перець.",
+      "price": 35,
+      "image": "image/200x200.gif"
+    }
+  ]
+}
