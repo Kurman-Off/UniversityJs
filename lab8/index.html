@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна Сторінка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <button class="hamburger-menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">
+                    <span>Головна</span>
+                </a></li>
+                <li><a href="#services">
+                    <span>Послуги</span>
+                </a></li>
+                <li><a href="#portfolio">
+                    <span>Портфоліо</span>
+                </a></li>
+                <li><a href="#about">
+                    <span>Про нас</span>
+                </a></li>
+                <li><a href="#contact">
+                    <span>Контакти</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <img src="./image/200x200.gif" alt="Слайд 1" class="carousel-slide active">
+                    <img src="./image/300x300.gif" alt="Слайд 2" class="carousel-slide">
+                    <img src="./image/400x400.gif" alt="Слайд 3" class="carousel-slide">
+                </div>
+                <button class="carousel-control prev">&#10094;</button>
+                <button class="carousel-control next">&#10095;</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide-to="1"></span>
+                    <span class="indicator" data-slide-to="2"></span>
+                    <span class="indicator" data-slide-to="3"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-section">
+            <div class="large-images">
+                <img src="./image/green.gif" alt="Large Image 1">
+                <img src="./image/green.gif" alt="Large Image 2">
+                <img src="./image/green.gif" alt="Large Image 3">
+            </div>
+            <div class="medium-images">
+                <img src="./image/red.gif" alt="Medium Image 1">
+                <img src="./image/red.gif" alt="Medium Image 2">
+                <img src="./image/red.gif" alt="Medium Image 3">
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
